@@ -27,13 +27,13 @@ const quiz = {
     },
     {
       choices: ["Yes", "No"],
-      correctAnswer: 1,
-      text: "Should men and woman be paid equally?"
+      correctAnswer: 0,
+      text: "Is it possible we are living in a simulation?"
     },
     {
       choices: ["Yes", "No"],
       correctAnswer: 0,
-      text: "Should the death penalty be allowed?"
+      text: "Is there life on other planets?"
     },
     {
       choices: ["Yes", "No"],

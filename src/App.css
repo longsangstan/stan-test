@@ -26,6 +26,11 @@
   text-align: center;
 }
 
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -84,6 +84,14 @@ class App extends React.Component {
         >
           {submitted ? "Do It Again" : "Submit"}
         </Button>
+        <div style={{ margin: 10 }}>
+          <a
+            style={{ fontWeight: "bold" }}
+            href="https://clss.hk/?utm_source=test"
+          >
+            ⚡Powered by CLSS.hk
+          </a>
+        </div>
       </div>
     );
   }
