@@ -70,7 +70,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { submitted } = this.state;
+    const { submitted, currentChoices } = this.state;
 
     return (
       <div className="App">
@@ -78,7 +78,10 @@ class App extends React.Component {
           <h2 className="App-intro">Can you stan the test?</h2>
         )}
         {submitted ? this.renderResultView() : this.renderQuestionsView()}
-        <Button onClick={this.handleButtonClick}>
+        <Button
+          onClick={this.handleButtonClick}
+          disabled={currentChoices.includes("") && !submitted}
+        >
           {submitted ? "Do It Again" : "Submit"}
         </Button>
       </div>
