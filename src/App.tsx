@@ -11,7 +11,7 @@ import quiz from "./quiz";
 
 class App extends React.Component {
   state = {
-    currentChoices: quiz.questions.map(() => "0"),
+    currentChoices: quiz.questions.map(() => ""),
     resultString: "",
     score: 0,
     submitted: false
@@ -29,7 +29,7 @@ class App extends React.Component {
 
   handleButtonClick = () => {
     this.setState({
-      currentChoices: quiz.questions.map(() => "0"),
+      currentChoices: quiz.questions.map(() => ""),
       resultString: makeResultString(
         quiz,
         this.state.currentChoices.map(item => parseInt(item, 10))

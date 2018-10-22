@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { RadioGroup } from "evergreen-ui";
+import { Pane, Radio } from "evergreen-ui";
 
 interface IQuestionProps {
   text: string;
@@ -10,20 +10,9 @@ interface IQuestionProps {
   onChoiceChange: (index: number, newChoice: string) => void;
 }
 
-interface IRadioGroupOption {
-  label: string;
-  value: string;
-}
-
-function mapChoicesToRadioGroupOptions(choices: string[]): IRadioGroupOption[] {
-  return choices.map((value, index) => {
-    return { label: value, value: index.toString() };
-  });
-}
-
 class Question extends React.Component<IQuestionProps> {
-  handleChoiceChange = (value: string) => {
-    this.props.onChoiceChange(this.props.index, value);
+  handleChoiceChange = (event: any) => {
+    this.props.onChoiceChange(this.props.index, event.currentTarget.value);
   };
 
   render() {
@@ -32,13 +21,19 @@ class Question extends React.Component<IQuestionProps> {
     return (
       <div>
         <p>{`${index + 1}. ${text}`}</p>
-        <RadioGroup
-          size={16}
-          // label={`${index + 1}. ${text}`}
-          value={currentChoice}
-          options={mapChoicesToRadioGroupOptions(choices)}
-          onChange={this.handleChoiceChange}
-        />
+
+        <Pane>
+          {choices.map((choice, choiceIndex) => (
+            <Radio
+              key={choiceIndex}
+              size={16}
+              label={choice}
+              value={choiceIndex.toString()}
+              checked={choiceIndex.toString() === currentChoice}
+              onChange={this.handleChoiceChange}
+            />
+          ))}
+        </Pane>
       </div>
     );
   }
