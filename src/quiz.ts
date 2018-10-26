@@ -37,8 +37,8 @@ const quiz = {
     },
     {
       choices: ["Yes", "No"],
-      correctAnswer: 0,
-      text: "Should abortion be legal?"
+      correctAnswer: 1,
+      text: "If you upload your mind to a computer, are you still you?"
     },
     {
       choices: ["Yes", "No"],
