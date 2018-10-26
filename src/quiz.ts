@@ -43,7 +43,7 @@ const quiz = {
     {
       choices: ["Yes", "No"],
       correctAnswer: 0,
-      text: "Should euthanasia be legal?"
+      text: "Is it okay to commit suicide?"
     },
     {
       choices: ["Yes", "No"],
