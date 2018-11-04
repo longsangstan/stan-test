@@ -6,6 +6,7 @@ import { Button } from "evergreen-ui";
 import Question from "./Question";
 
 import calculateScore from "./calculateScore";
+import makeResultComment from "./makeResultComment";
 import makeResultString from "./makeResultString";
 import quiz from "./quiz";
 
@@ -64,7 +65,20 @@ class App extends React.Component {
       <div>
         <h1>{`Your Stan Score is ${this.state.score}/100!`}</h1>
         <p>{this.state.resultString}</p>
-        <h2>{`What does it mean? Absolutely nothing.`}</h2>
+        <h2>{makeResultComment(this.state.score)}</h2>
+        <h3>
+          <a
+            style={{
+              color: "#636e72",
+              fontWeight: "bold",
+              textDecoration: "underline"
+            }}
+            href="https://medium.com/@longsangstan/the-stan-test-can-you-stan-the-test-97a6a1f358e5"
+            target="_blank"
+          >
+            Learn more about the test here!
+          </a>
+        </h3>
       </div>
     );
   };
@@ -88,6 +102,7 @@ class App extends React.Component {
           <a
             style={{ fontWeight: "bold" }}
             href="https://clss.hk/?utm_source=test"
+            target="_blank"
           >
             ⚡Powered by CLSS.hk
           </a>
