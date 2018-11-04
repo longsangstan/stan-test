@@ -28,7 +28,7 @@ const quiz = {
     {
       choices: ["Yes", "No"],
       correctAnswer: 0,
-      text: "Is it possible we are living in a simulation?"
+      text: "Are we living in a simulation?"
     },
     {
       choices: ["Yes", "No"],
